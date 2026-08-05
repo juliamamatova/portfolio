@@ -527,10 +527,8 @@ img,svg{max-width:100%}
 .wordmark{
   font-family:var(--display);font-weight:800;font-style:italic;
   font-size:19px;letter-spacing:.02em;
-  background:linear-gradient(96deg,var(--sky) 0%,#41A9F0 46%,#2F7FE0 100%);
-  background-size:220% 100%;
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  animation:wmShift 9s ease-in-out infinite;
+  color:var(--sky);
+  padding-right:3px;
 }
 
 .body{position:relative;z-index:5;padding:0 22px 126px}
@@ -870,8 +868,6 @@ img,svg{max-width:100%}
 @keyframes qrscan{0%,100%{top:0;opacity:0}8%{opacity:.9}92%{top:262px;opacity:0}}
 @keyframes dealPulse{0%,100%{border-color:rgba(79,205,247,.3);box-shadow:0 0 0 0 rgba(79,205,247,0)}50%{border-color:rgba(79,205,247,.6);box-shadow:0 0 14px 0 rgba(79,205,247,.22)}}
 @keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
-@keyframes wmShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-
 @media (prefers-reduced-motion:reduce){
   .phone *,.phone *::after,.phone *::before{animation:none !important}
   .frame > .beam{top:50%;opacity:.95}

@@ -180,8 +180,9 @@ body::before{
 .b-arch{color:var(--ink-3);background:rgba(26,11,46,.06)}
 
 .cta{
-  width:100%;border:0;cursor:pointer;border-radius:18px;padding:16px;color:#fff;font-family:var(--f);
-  font-size:15.5px;font-weight:600;letter-spacing:-.01em;
+  width:100%;border:0;cursor:pointer;border-radius:18px;padding:0 16px;color:#fff;font-family:var(--f);
+  font-size:15.5px;font-weight:600;letter-spacing:-.01em;line-height:1.2;
+  display:flex;align-items:center;justify-content:center;min-height:51px;
   background:linear-gradient(135deg,#6A1AB0 0%,var(--violet) 60%,#3A0A68 100%);
   box-shadow:0 12px 24px -16px rgba(76,12,135,.85),inset 0 1px 0 rgba(255,255,255,.28);
 }
@@ -232,7 +233,7 @@ body::before{
 .up{color:var(--green-d)}.dn{color:var(--coral)}
 
 .salary{
-  position:relative;overflow:hidden;border-radius:var(--r-l);padding:14px 16px 15px;margin-top:8px;color:#fff;
+  position:relative;overflow:hidden;border-radius:var(--r-l);padding:14px 16px 15px;margin-top:13px;color:#fff;
   background:linear-gradient(135deg,#28D897 0%,var(--green) 42%,#0B8A5B 100%);
   box-shadow:0 20px 36px -22px rgba(14,154,102,.95),inset 0 1px 0 rgba(255,255,255,.35);
 }
@@ -330,11 +331,8 @@ body::before{
 .thumb{flex:none;width:62px;height:62px;border-radius:15px;position:relative;display:grid;place-items:center;color:rgba(255,255,255,.85);box-shadow:var(--shadow-m)}
 .thumb .x{position:absolute;top:5px;right:5px;width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center;color:var(--violet)}
 .thumb.add{background:rgba(255,255,255,.6);border:1.5px dashed rgba(76,12,135,.28);color:var(--violet);box-shadow:none}
-.t1{background:linear-gradient(140deg,#7A2BC4,#4C0C87)}
-.t2{background:linear-gradient(140deg,#2BD894,#0E9A66)}
-.t3{background:linear-gradient(140deg,#B58AE8,#6A1AB0)}
-.t4{background:linear-gradient(140deg,#57E0B4,#1E7FA8)}
-.t5{background:linear-gradient(140deg,#FF8FA3,#7A2BC4)}
+.t1,.t2,.t3,.t4,.t5{background:var(--green)}
+.thumb::after,.thumb::before{content:none!important;animation:none!important}
 .chips-x{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .chip-x{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 10px 0 4px;border-radius:12px;font-size:13px;font-weight:500;
   background:rgba(255,255,255,.72);border:1px solid var(--line);box-shadow:var(--shadow-s)}
@@ -1381,10 +1379,9 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
           <span class="ava sm">TS</span>
           <span style="flex:1;font-size:12.5px;font-weight:500;line-height:1.45;color:var(--ink-2)">Six days under plan. Tom asked for a recovery note by Friday.</span>
         </div>
-
-        <button class="btn-sm" style="width:100%;justify-content:center;margin-top:12px">Open recovery plan</button>
       </div>
-      <div class="homebar"></div>
+
+      <div class="dock over"><button class="cta"><span style="display:inline-flex;align-items:center;gap:9px;justify-content:center">Open recovery plan</span></button><div class="homebar"></div></div>
     </div></div></div>
         <div class="shot-cap"><b>Sales metric detail</b><span>A drill-down for a single store: daily target, average sales and the gap to plan in the header, then a day-by-day chart with markers for target and average.</span></div>
       </div>

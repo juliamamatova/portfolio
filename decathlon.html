@@ -41,6 +41,7 @@
   --accent:#4FCDF7;         /* signal tone above it  */
   --accent-soft:rgba(79,205,247,.11);
   --accent-line:rgba(79,205,247,.30);
+  --accent-gradient:linear-gradient(135deg, #0090DA 0%, #00B3E6 100%);
   --tint-a:#0E4A72;
   --tint-b:#0B3B6B;
 
@@ -78,9 +79,12 @@ img,svg{max-width:100%}
    3. NAVIGATION - shared, fixed, same size and colour everywhere
    ============================================================ */
 .nav{
+  --fg:#0B1520;
+  --fg2:rgba(11,21,32,.62);
+  --line:rgba(11,21,32,.14);
+  --line2:rgba(11,21,32,.20);
   position:fixed;top:0;left:0;right:0;z-index:120;height:var(--nav-h);
-  background:rgba(7,10,15,.90);
-  backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);
+  background:#F7F6F2;
   border-bottom:1px solid var(--line);
 }
 .nav-in{
@@ -118,9 +122,9 @@ img,svg{max-width:100%}
 
 .nav-panel{
   position:absolute;top:var(--nav-h);left:0;right:0;
-  background:#080B11;
+  background:#F7F6F2;
   border-bottom:1px solid var(--line);
-  box-shadow:0 26px 60px -22px rgba(0,0,0,.85);
+  box-shadow:0 26px 60px -22px rgba(11,21,32,.14);
   padding:10px 24px 22px;display:none;
 }
 .nav.is-open .nav-panel{display:block}
@@ -157,22 +161,22 @@ img,svg{max-width:100%}
 /* ============================================================
    5. MASTHEAD
    ============================================================ */
-.masthead{padding:76px 0 72px}
+.masthead{padding:76px 0 48px;background:#F7F6F2;color:var(--fg)}
 .kicker{
   display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:0 0 30px;
   font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
 }
 .kicker span{display:flex;align-items:center;gap:14px}
-.kicker span::after{content:"";width:1px;height:11px;background:var(--accent-line)}
+.kicker span::after{content:"";width:1px;height:11px;background:#00a5ec; }
 .kicker span:last-child::after{display:none}
 
 .masthead h1{
   font-family:var(--display);font-weight:200;letter-spacing:-.038em;
-  font-size:clamp(34px,5.4vw,72px);line-height:1.02;margin:0 0 30px;
+  font-size:clamp(30px,4.2vw,48px);line-height:1.08;margin:0 0 30px;
   max-width:none;text-wrap:balance;
 }
 .nw{white-space:nowrap}
-.masthead h1 em{font-style:normal;color:var(--accent)}
+.masthead h1 em{font-style:normal;background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .lede{font-size:19px;line-height:1.6;color:var(--fg2);max-width:60ch;margin:0}
 
 .factbar{
@@ -381,7 +385,7 @@ img,svg{max-width:100%}
   --risk:#C0442E;
   --risk-soft:rgba(192,68,46,.08);
   --risk-line:rgba(192,68,46,.26);
-  background:#EDF2F6;
+  background:#F7F6F2;
   color:var(--fg);
 }
 .sec--light .gcard,
@@ -392,6 +396,34 @@ img,svg{max-width:100%}
   box-shadow:0 1px 2px rgba(11,21,32,.05);
 }
 .sec--light + .sec--light{padding-top:28px}
+
+/* ============================================================
+   13b. OUTCOME CARDS
+   ============================================================ */
+.outcome-section{padding-top:44px}
+.outcome-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:0}
+.outcome-card{
+  padding:40px 32px;border-radius:26px;background:#FFFFFF;
+  border:1px solid rgba(11,21,32,.08);box-shadow:0 2px 8px rgba(11,21,32,.05);
+  text-align:left;
+}
+.outcome-card .stat{
+  font-family:var(--display);font-weight:300;font-size:clamp(32px,5vw,48px);
+  letter-spacing:-.035em;margin:0 0 16px;line-height:1.1;
+  background:linear-gradient(135deg,#4cc9f0 0%,#2595d4 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.outcome-card .label{
+  font-family:var(--display);font-weight:500;font-size:16px;
+  letter-spacing:-.015em;color:rgba(11,21,32,.85);margin:0 0 12px;line-height:1.3;
+}
+.outcome-card .desc{
+  font-size:14px;line-height:1.6;color:rgba(11,21,32,.62);margin:0;
+}
+@media (max-width:900px){
+  .outcome-cards{grid-template-columns:1fr}
+}
+
 /* ============================================================
    13c. MOBILE: vertical journey, centred screens
    ============================================================ */
@@ -812,7 +844,7 @@ img,svg{max-width:100%}
 .taghero::after{
   content:"";position:absolute;top:0;bottom:0;left:-180px;width:120px;
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent);
-  animation:shimmer 7s ease-in-out infinite;
+  animation:none;
 }
 .help-body{padding:0 2px}
 .help-body .h2{margin-bottom:14px}
@@ -869,8 +901,11 @@ img,svg{max-width:100%}
 @keyframes qrscan{0%,100%{top:0;opacity:0}8%{opacity:.9}92%{top:262px;opacity:0}}
 @keyframes dealPulse{0%,100%{border-color:rgba(79,205,247,.3);box-shadow:0 0 0 0 rgba(79,205,247,0)}50%{border-color:rgba(79,205,247,.6);box-shadow:0 0 14px 0 rgba(79,205,247,.22)}}
 @keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+@keyframes outcomePop{0%{opacity:.2;transform:scale(.88)}70%{opacity:1;transform:scale(1.03)}100%{opacity:1;transform:scale(1)}}
+.outcome-card .stat{animation:outcomePop .65s cubic-bezier(.22,.8,.28,1) both}
 @media (prefers-reduced-motion:reduce){
   .phone *,.phone *::after,.phone *::before{animation:none !important}
+  .outcome-card .stat{animation:none !important}
   .frame > .beam{top:50%;opacity:.95}
 }
 
@@ -938,7 +973,7 @@ img,svg{max-width:100%}
 </nav>
 
 <!-- ========================================================== MASTHEAD -->
-<header class="masthead">
+<header class="masthead sec--light">
   <div class="wrap">
     <p class="kicker"><span>Retail tech</span><span>Self-checkout</span><span>iOS &amp; Android</span><span>RFID</span></p>
     <h1>Decathlon: mobile <em class="nw">self-scanning</em> <br class="brk">app for <span class="nw">in-store</span> shopping</h1>
@@ -955,8 +990,32 @@ img,svg{max-width:100%}
 
 <main>
 
+<!-- ========================================================== OUTCOME -->
+<section class="sec sec--light" style="padding-top:0px">
+  <div class="wrap">
+    
+    <div class="outcome-cards">
+      <div class="outcome-card">
+        <p class="stat" data-value="60" data-suffix="%">0%</p>
+        <p class="label">reduced POS traffic</p>
+        <p class="desc">Checkout queues shortened significantly after self-scanning adoption rolled out across locations.</p>
+      </div>
+      <div class="outcome-card">
+        <p class="stat" data-value="45" data-suffix="%">0%</p>
+        <p class="label">of eligible purchases</p>
+        <p class="desc">Nearly half of customers used the self-scanning option when shopping in participating stores.</p>
+      </div>
+      <div class="outcome-card">
+        <p class="stat" data-value="30" data-suffix="%">0%</p>
+        <p class="label">reduced checkout time</p>
+        <p class="desc">Average time at the till dropped after introducing the mobile scanning flow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========================================================== THE DESIGN -->
-<section class="sec sec--results sec--tight">
+<section class="sec sec--results sec--tight" style="padding-top:92px">
   <div class="wrap">
     <h2 class="sec-title">Designing the end-to-end experience</h2>
     <p class="sec-lede">Eight screens I designed end to end, carrying the whole flow: walk in, scan, keep the list, pay. Below is how each one works and why I shaped it that way.</p>
@@ -1334,18 +1393,6 @@ img,svg{max-width:100%}
 
 </main>
 
-<!-- ========================================================== OUTCOME -->
-<section class="sec">
-  <div class="wrap">
-    <h2 class="sec-title">Outcome</h2>
-    <ul class="wins">
-      <li><span class="tick"><svg width="12" height="12" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8l3.2 3.2L12.5 4"/></svg></span>Launched in Decathlon Russia stores</li>
-      <li><span class="tick"><svg width="12" height="12" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8l3.2 3.2L12.5 4"/></svg></span>A working self-scanning flow with no POS integration</li>
-      <li><span class="tick"><svg width="12" height="12" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8l3.2 3.2L12.5 4"/></svg></span>Architecture prepared for the next stage: in-app payment via acquiring</li>
-    </ul>
-  </div>
-</section>
-
 <!-- ========================================================== GOAL (light) -->
 <section class="sec sec--light">
   <div class="wrap">
@@ -1602,6 +1649,32 @@ img,svg{max-width:100%}
   window.addEventListener('resize', drawHook);
   window.addEventListener('load', drawHook);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawHook);
+
+
+  // animate outcome statistics from 0 to their final values on page load
+  function animateOutcomeStats(){
+    var stats = document.querySelectorAll('.outcome-card .stat');
+    stats.forEach(function(stat, index){
+      var target = parseFloat(stat.dataset.value || stat.textContent);
+      if(!isFinite(target)) return;
+      var suffix = stat.dataset.suffix || (stat.textContent.match(/[%+\w]+$/) || [''])[0];
+      var start = performance.now();
+      var duration = 1200;
+      var delay = index * 100;
+
+      setTimeout(function(){
+        function tick(now){
+          var progress = Math.min((now - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          stat.textContent = Math.round(target * eased) + suffix;
+          if(progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }, delay);
+    });
+  }
+  animateOutcomeStats();
+
 })();
 </script>
 </body>

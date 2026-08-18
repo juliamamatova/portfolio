@@ -99,7 +99,7 @@ body::before{
       rgba(0,0,0,.03) 88%, rgba(0,0,0,.07) 100%);
   background-blend-mode:normal, overlay;
   box-shadow:
-    var(--shadow-l),
+    0 28px 52px rgba(120,115,130,.24),
     0 0 0 .5px rgba(76,12,135,.16),
     inset 0 0 0 1px rgba(255,255,255,.86),
     inset 0 1.5px 1px rgba(255,255,255,.95),
@@ -687,7 +687,7 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);display
    repainted in the Megafon light palette (#20C483 / #4C0C87)
    ============================================================ */
 :root{
-  --display:"Manrope",system-ui,sans-serif;
+  --display:"Instrument Sans",system-ui,sans-serif;
   --ui:"Instrument Sans",system-ui,sans-serif;
   --mono:"Instrument Sans",system-ui,sans-serif;
 
@@ -713,7 +713,7 @@ footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);display
 html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{
   font-family:var(--ui);font-size:16px;line-height:1.65;color:var(--fg);
-  padding-top:var(--nav-h);
+  padding-top:var(--nav-h);background:#f7f6f2;
 }
 /* the phone mockups keep their own typeface */
 .phone,.screen{font-family:var(--f)}
@@ -723,8 +723,8 @@ body{
    ============================================================ */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:120;height:var(--nav-h);
-  background:rgba(247,244,252,.90);
-  backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);
+  background:#f7f6f2;
+  backdrop-filter:none;-webkit-backdrop-filter:none;
   border-bottom:1px solid var(--pline);
 }
 .nav-in{max-width:1180px;margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;gap:32px}
@@ -768,7 +768,8 @@ body{
    LAYOUT
    ============================================================ */
 .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
-/* keep page content above the fixed background mesh */
+/* page mesh disabled — using clean neutral background */
+body::before{content:none!important}
 main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
 .sec{padding:92px 0}
 .sec--tight{padding:56px 0 62px}
@@ -791,8 +792,8 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
 .masthead .kicker span::after{content:"";width:1px;height:11px;background:var(--accent-line)}
 .masthead .kicker span:last-child::after{display:none}
 
-.masthead h1{font-family:var(--display);font-weight:200;letter-spacing:-.038em;
-  font-size:clamp(34px,5.4vw,72px);line-height:1.02;margin:0 0 30px;text-wrap:balance}
+.masthead h1{font-family:var(--ui);font-weight:200;letter-spacing:-.038em;
+  font-size:clamp(34px,5.4vw,48px);line-height:1.08;margin:0 0 32px;text-wrap:balance}
 .nw{white-space:nowrap}
 .masthead h1 em{font-style:normal;
   background:linear-gradient(96deg,var(--accent-2) 0%,#7A2BC4 54%,var(--accent) 100%);
@@ -931,7 +932,45 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
 /* ============================================================
    SCREENS — same rail as the Decathlon case
    ============================================================ */
-.shotgroup{max-width:1180px;margin:44px auto 0;padding:0 32px}
+.shotgroup{max-width:1180px;margin:44px auto 0;padding:0 32px;position:relative}
+
+/* colour wash behind the screens — kept well inside the frame, always drifting */
+.shot-blobs{position:absolute;inset:6% 10%;z-index:0;pointer-events:none;overflow:visible}
+.shot-blobs i{position:absolute;border-radius:50%;filter:blur(64px);display:block}
+.shot-blobs i:nth-child(1){
+  left:8%;top:4%;width:44%;height:64%;
+  background:radial-gradient(closest-side, rgba(32,196,131,.42), transparent 72%);
+  animation:blobFloatA 15s ease-in-out infinite alternate;
+}
+.shot-blobs i:nth-child(2){
+  right:6%;top:18%;width:40%;height:58%;
+  background:radial-gradient(closest-side, rgba(122,43,196,.38), transparent 72%);
+  animation:blobFloatB 18s ease-in-out infinite alternate;
+}
+.shot-blobs i:nth-child(3){
+  left:32%;bottom:0%;width:36%;height:52%;
+  background:radial-gradient(closest-side, rgba(76,12,135,.30), transparent 72%);
+  animation:blobFloatC 21s ease-in-out infinite alternate;
+}
+@keyframes blobFloatA{
+  0%  {transform:translate(0,0) scale(1)}
+  50% {transform:translate(6%,-8%) scale(1.12)}
+  100%{transform:translate(-4%,5%) scale(.95)}
+}
+@keyframes blobFloatB{
+  0%  {transform:translate(0,0) scale(1.05)}
+  50% {transform:translate(-7%,6%) scale(.94)}
+  100%{transform:translate(4%,-6%) scale(1.1)}
+}
+@keyframes blobFloatC{
+  0%  {transform:translate(0,0) scale(.98)}
+  50% {transform:translate(5%,4%) scale(1.08)}
+  100%{transform:translate(-6%,-3%) scale(1)}
+}
+@media (prefers-reduced-motion:reduce){
+  .shot-blobs i{animation:none}
+}
+.shots{position:relative;z-index:1}
 .shots{display:flex;flex-wrap:wrap;gap:56px 33px}
 .shot{width:350px;flex:0 0 auto}
 .shot .phone-wrap{--s:.9409}
@@ -1086,7 +1125,7 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
 <header class="masthead">
   <div class="wrap">
     <p class="kicker"><span>B2E</span><span>MVP &rarr; production</span><span>Android &amp; iOS</span><span>Role-based access</span></p>
-    <h1>Megafon Retail: one <em class="nw">role-based</em> platform<br class="brk"> for the whole retail network</h1>
+    <h1>Megafon Retail: one <em class="nw">role-based</em> platform<br>for the whole retail network</h1>
     <p class="lede">An internal mobile app for around 10,000 Megafon Retail employees. Tasks, sales analytics, profiles and communication in one tool.</p>
 
     <dl class="factbar">
@@ -1108,6 +1147,8 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
   </div>
 
   <div class="shotgroup">
+    <div class="shot-blobs" id="shotBlobs" aria-hidden="true"><i></i><i></i><i></i></div>
+
     <div class="shots">
 
       <div class="shot">

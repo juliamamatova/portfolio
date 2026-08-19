@@ -718,6 +718,32 @@ body{
 /* the phone mockups keep their own typeface */
 .phone,.screen{font-family:var(--f)}
 
+
+/* FULL-BLEED TWO-IMAGE FEATURE */
+.fullbleed-pair{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  overflow:hidden;
+}
+.fullbleed-pair img{
+  display:block;
+  width:100%;
+  height:auto;
+  height:clamp(420px,42vw,680px);
+  object-fit:cover;
+}
+@media (max-width:640px){
+  .fullbleed-pair{
+    grid-template-columns:1fr;
+  }
+  .fullbleed-pair img{
+    aspect-ratio:16/10;
+  }
+}
+
 /* ============================================================
    NAVIGATION — fixed, 68px, same on every case page
    ============================================================ */
@@ -1041,6 +1067,13 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
 }
 
 </style>
+
+<style>
+.product-lead{
+  padding-top:72px;
+}
+</style>
+
 </head>
 <body>
 
@@ -1139,8 +1172,15 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
 
 <main>
 
+
+<!-- ========================================================== FULL-BLEED IMAGE PAIR -->
+<section class="fullbleed-pair" aria-label="Product visuals">
+  <img src="https://cdn.prod.website-files.com/662e9bf054d78aed6d52eae4/6a85f3edbb8f1f3d003c7089_3%D0%BA.jpg" alt="Product visual 1">
+  <img src="https://cdn.prod.website-files.com/662e9bf054d78aed6d52eae4/6a85f3ed7fdccef2031219d4_ChatGPT%20Image%2019%20%D0%B0%D0%B2%D0%B3.%202026%20%D0%B3.%2C%2015_19_05.png" alt="Product visual 2">
+</section>
+
 <!-- ========================================================== 01 THE PRODUCT -->
-<section class="sec sec--lead">
+<section class="sec sec--lead product-lead">
   <div class="wrap">
     <h2 class="sec-title">The product, designed from scratch</h2>
     <p class="sec-lede">There was no existing app, no design system and no precedent inside the company &mdash; every screen below was built from a blank canvas. Eight of them carry the product: the shift, the task, the analytics and the profile.</p>

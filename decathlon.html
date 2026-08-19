@@ -146,7 +146,7 @@ img,svg{max-width:100%}
    4. LAYOUT
    ============================================================ */
 .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
-.sec{padding:72px 0}
+.sec{padding:92px 0}
 .sec--tight{padding-top:12px}
 .sec-title{
   font-family:var(--display);font-weight:300;letter-spacing:-.028em;
@@ -403,13 +403,13 @@ img,svg{max-width:100%}
 .outcome-section{padding-top:44px}
 .outcome-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:0}
 .outcome-card{
-  padding:20px 32px;border-radius:26px;background:#FFFFFF;
+  padding:40px 32px;border-radius:26px;background:#FFFFFF;
   border:1px solid rgba(11,21,32,.08);box-shadow:0 2px 8px rgba(11,21,32,.05);
   text-align:left;
 }
 .outcome-card .stat{
   font-family:var(--display);font-weight:300;font-size:clamp(32px,5vw,48px);
-  letter-spacing:-.035em;margin:0 0 0px;line-height:1.1;
+  letter-spacing:-.035em;margin:0 0 16px;line-height:1.1;
   background:linear-gradient(135deg,#4cc9f0 0%,#2595d4 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
@@ -956,6 +956,32 @@ img,svg{max-width:100%}
   margin:0 !important;
   padding:0 !important;
   object-fit:cover !important;
+}
+
+
+@media (max-width: 767px){
+  .fullbleed-triptych{
+    display:flex !important;
+    flex-flow:row nowrap !important;
+    width:100vw !important;
+    margin-left:calc(50% - 50vw) !important;
+    gap:0 !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .fullbleed-triptych::-webkit-scrollbar{display:none}
+  .fullbleed-triptych img{
+    flex:0 0 85vw !important;
+    width:85vw !important;
+    min-width:85vw !important;
+    max-width:85vw !important;
+    height:400px !important;
+    object-fit:cover !important;
+    scroll-snap-align:start;
+  }
 }
 
 </style>

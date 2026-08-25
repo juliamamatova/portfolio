@@ -1066,6 +1066,54 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
   .shot-cap{max-width:272px}
 }
 
+/* ═══════════ GALLERY WITH CAROUSEL ═══════════ */
+.gallery-container{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  overflow:hidden;
+}
+
+.gallery-wrapper{
+  display:flex;
+  height:70vh;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+
+.gallery-wrapper::-webkit-scrollbar{
+  display:none;
+}
+
+.gallery-item{
+  flex:0 0 calc(100% / 3);
+  height:70vh;
+  overflow:hidden;
+  background:var(--fg);
+}
+
+.gallery-item img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+@media (max-width:640px){
+  .gallery-wrapper{
+    height:400px;
+    scroll-snap-type:x mandatory;
+  }
+
+  .gallery-item{
+    flex:0 0 90vw;
+    height:400px;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+  }
+}
+
 </style>
 
 <style>
@@ -1743,6 +1791,21 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
     </div>
   </div>
 </section>
+
+<!-- ========================================================== GALLERY -->
+<div class="gallery-container">
+  <div class="gallery-wrapper">
+    <div class="gallery-item">
+      <img src="https://cdn.prod.website-files.com/662e9bf054d78aed6d52eae4/6a8da9d081b1305293332c8c_ChatGPT%20Image%2025%20%D0%B0%D0%B2%D0%B3.%202026%20%D0%B3.%2C%2011_06_19.png" alt="Megafon retail gallery 1">
+    </div>
+    <div class="gallery-item">
+      <img src="https://cdn.prod.website-files.com/662e9bf054d78aed6d52eae4/6a8daadbe0641067317af8bc_ChatGPT%20Image%2025%20%D0%B0%D0%B2%D0%B3.%202026%20%D0%B3.%2C%2010_51_01.png" alt="Megafon retail gallery 2">
+    </div>
+    <div class="gallery-item">
+      <img src="https://cdn.prod.website-files.com/662e9bf054d78aed6d52eae4/6a8da9cf88906dd7f71136cb_23r23r.jpg" alt="Megafon retail gallery 3">
+    </div>
+  </div>
+</div>
 
 <!-- ========================================================== 04 CHALLENGES -->
 <section class="sec">

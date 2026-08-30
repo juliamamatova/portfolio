@@ -417,10 +417,164 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
 .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;color:#98A2B3;font-size:10px;font-weight:600}
 .tab.on{color:#0F1622}
 .tab.on .tdot{background:#FFC53D}
+.demo .board > .tabs{position:relative;left:auto;right:auto;bottom:auto;z-index:auto;width:100%;box-sizing:border-box;}
 .tdot{width:4px;height:4px;border-radius:50%;background:transparent}
 
 /* scroll fade */
 .pfade{position:absolute;left:0;right:0;bottom:0;height:44px;background:linear-gradient(180deg,rgba(255,255,255,0),#fff);pointer-events:none}
+
+/* ═══════════════════════════════════════════════
+   DESKTOP SCREENS — the same Fieldman system at desk width:
+   sky gradient, white sheet on 26px radius, blue actions,
+   amber reserved for status, Manrope on numbers
+   ═══════════════════════════════════════════════ */
+.deskgroup{max-width:1180px;margin:56px auto 0;padding:0 32px;position:relative;z-index:1}
+.deskshot{margin-top:56px}
+.deskshot:first-child{margin-top:0}
+.desk-cap{margin:26px 2px 0;max-width:70ch}
+.desk-cap b{display:block;font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.015em;margin-bottom:8px;color:var(--fg)}
+.desk-cap span{display:block;font-size:13.5px;line-height:1.6;color:var(--fg3)}
+
+.deskframe{border-radius:16px;overflow:hidden;
+  box-shadow:0 30px 70px -30px rgba(16,23,37,.42),0 0 0 1px rgba(16,23,37,.06)}
+.deskscale{width:1600px;transform-origin:top left}
+
+.dwin{
+  width:1600px;overflow:hidden;background:#F5F7FA;
+  user-select:none;-webkit-user-select:none;
+  font-family:"Noto Sans",system-ui,-apple-system,sans-serif;color:#0F1622;
+}
+/* window bar sits in the product's own palette, not macOS grey */
+.dbar{display:flex;align-items:center;gap:8px;padding:13px 20px;background:#EAEFF7;border-bottom:1px solid #DDE5F0}
+.dbar i{width:11px;height:11px;border-radius:50%;display:block;background:#C6D2E2}
+.dbar .u{margin-left:16px;display:inline-flex;align-items:center;gap:9px;background:#fff;border-radius:999px;
+  padding:6px 16px;font-size:12.5px;font-weight:600;color:#6E7B90}
+
+.dshell{display:flex;min-height:0}
+
+/* ── rail: white on the sky wash, not a black slab ── */
+.drail{width:218px;flex:0 0 auto;display:flex;flex-direction:column;padding:22px 14px 20px;
+  background:linear-gradient(178deg,#C2D8F6 0%,#DCE8FA 46%,#EEF3FB 100%);border-right:none}
+.dlogo{display:flex;align-items:center;gap:10px;padding:0 8px 20px}
+.dlogo b{font-family:"Manrope",sans-serif;font-size:18px;font-weight:800;letter-spacing:-.03em}
+.dlogo .mk{width:26px;height:26px;border-radius:9px;background:#2563EB;display:grid;place-items:center;color:#fff}
+.dnav{display:flex;flex-direction:column;gap:2px}
+.ditem{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:12px;
+  font-size:13px;font-weight:600;color:#4A5567;white-space:nowrap}
+.ditem.on{background:#fff;color:#0F1622;box-shadow:0 1px 3px rgba(15,22,34,.10)}
+.ditem.on svg{color:#2563EB}
+.ditem svg{color:#7A8699;flex:0 0 auto}
+.ditem .n{margin-left:auto;font-family:"Manrope",sans-serif;font-size:10.5px;font-weight:800;
+  background:rgba(15,22,34,.07);border-radius:999px;padding:2px 6px;color:#4A5567;flex:0 0 auto}
+.ditem.on .n{background:#DEE9FE;color:#1E4FBE}
+.drail .who{margin-top:auto;display:flex;align-items:center;gap:10px;padding:11px;border-radius:14px;background:rgba(255,255,255,.66)}
+.drail .who .av{width:32px;height:32px;border-radius:11px;background:#fff;display:grid;place-items:center;font-size:16px;flex:0 0 auto}
+.drail .who b{display:block;font-size:12.5px;font-weight:700}
+.drail .who span{display:block;font-size:11px;color:#6E7B90}
+
+.dmain{flex:1;min-width:0;display:flex;flex-direction:column;
+  background:linear-gradient(178deg,#C2D8F6 0%,#DAE8FA 34%,#EFF4FB 62%,#FFFFFF 100%)}
+
+/* ── page head over the sky ── */
+.dhead{flex:0 0 auto;padding:22px 28px 0}
+.dhead-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.dh1{font-family:"Manrope",sans-serif;font-size:26px;font-weight:800;letter-spacing:-.035em;margin:0}
+.dcrumb{font-size:12px;font-weight:700;color:#4A6790;letter-spacing:.02em;margin-bottom:4px}
+.dsearch{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);
+  border-radius:999px;padding:9px 16px;font-size:12.5px;color:#7A8699;min-width:240px}
+.dstats{display:flex;gap:9px;margin-top:14px}
+.dstat{padding:10px 16px;min-width:112px;background:rgba(255,255,255,.58);border:1px solid rgba(255,255,255,.85);
+  border-radius:16px;backdrop-filter:blur(6px)}
+.dstat .k{font-size:10.5px;font-weight:700;color:#5B6A80;letter-spacing:.06em;text-transform:uppercase}
+.dstat .v{font-family:"Manrope",sans-serif;font-size:21px;font-weight:800;letter-spacing:-.045em;margin-top:1px}
+.dstat .v small{font-size:12px;color:#6E7B90;font-weight:700;letter-spacing:0;margin-left:3px}
+
+/* ── the white sheet, exactly as on the phone ── */
+.dsheet{flex:1 1 auto;min-height:0;margin:16px 0 0;background:#fff;border-radius:26px 26px 0 0;
+  padding:18px 28px 0;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.dsheet::after{content:"";position:absolute;left:0;right:0;bottom:0;height:58px;pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,0),#fff 78%)}
+.dsheet-top{display:flex;align-items:center;gap:14px;margin-bottom:13px}
+.dsheet-top h3{margin:0;font-family:"Manrope",sans-serif;font-size:16px;font-weight:800;letter-spacing:-.025em}
+.dsheet-top .sp{margin-left:auto;display:flex;align-items:center;gap:9px}
+
+/* filters as the phone's chips + segmented control */
+.dchips{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.dchip{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:7px 13px;
+  font-size:12px;font-weight:600;color:#4A5567;background:#F5F7FA;border:1px solid #E7ECF3}
+.dchip.on{background:#2563EB;border-color:#2563EB;color:#fff}
+.dchip .v{color:#8B95A6;font-weight:700}
+.dchip.on .v{color:rgba(255,255,255,.75)}
+.dlink{font-size:12.5px;font-weight:700;color:#2563EB}
+.dbtn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:38px;padding:0 16px;border-radius:12px;
+  background:#2563EB;color:#fff;font-size:13px;font-weight:700;box-shadow:0 6px 16px -8px rgba(37,99,235,.7)}
+.dbtn.ghost{background:#fff;color:#0F1622;border:1.5px solid #DDE4EE;box-shadow:none}
+.dbtn.icon{width:38px;padding:0}
+
+/* ── table on the sheet ── */
+.dtbl{width:100%;border-collapse:separate;border-spacing:0 6px;font-size:13px}
+.dtbl th{text-align:left;font-size:10.5px;font-weight:700;color:#8B95A6;letter-spacing:.06em;text-transform:uppercase;
+  padding:0 14px 8px;white-space:nowrap}
+.dtbl th .hd{display:inline-flex;align-items:center;gap:6px}
+.dtbl th svg{color:#C3CBD8}
+.dtbl td{padding:13px 14px;background:#fff;border-top:1px solid #EFF2F6;border-bottom:1px solid #EFF2F6;
+  white-space:nowrap;vertical-align:middle}
+.dtbl td:first-child{border-left:1px solid #EFF2F6;border-radius:14px 0 0 14px}
+.dtbl td:last-child{border-right:1px solid #EFF2F6;border-radius:0 14px 14px 0}
+.dtbl tr.sel td{background:#F4F8FF;border-color:#C9DAFB}
+.dtbl tr.sel td:first-child{box-shadow:inset 3px 0 0 #2563EB}
+.dmono{font-family:"Noto Sans",sans-serif;letter-spacing:-.01em;color:#4A5567}
+.dname{font-weight:700;letter-spacing:-.01em}
+.dcbx{width:16px;height:16px;border-radius:5px;border:1.5px solid #C6CEDA;background:#fff;display:block}
+.dcbx.on{background:#2563EB;border-color:#2563EB;display:grid;place-items:center;color:#fff}
+.dtrade{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;flex:0 0 auto}
+.dsync{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700}
+.dsync.ok{color:#0F7A47}
+.dsync.wait{color:#B45309}
+.dsync i{width:7px;height:7px;border-radius:50%;background:currentColor;display:block}
+
+/* ── map screen ── */
+.dmap{flex:1 1 auto;position:relative;min-height:0;overflow:hidden;background:#EDEFF3;
+  border-radius:26px 26px 0 0;margin-top:16px}
+.dmapsvg{position:absolute;inset:0;width:100%;height:100%}
+.dpanel{position:absolute;left:20px;top:20px;bottom:20px;width:336px;display:flex;flex-direction:column;gap:11px}
+.dp-head{display:flex;align-items:center;justify-content:space-between;
+  background:#fff;border-radius:18px;padding:13px 16px;box-shadow:0 8px 22px -14px rgba(15,22,34,.4)}
+.dp-head h3{margin:0;font-family:"Manrope",sans-serif;font-size:16px;font-weight:800;letter-spacing:-.025em}
+.dp-head .c{font-size:12px;font-weight:700;color:#2563EB}
+.dcard{background:#fff;border-radius:20px;border:1px solid #EAEEF4;box-shadow:0 8px 22px -16px rgba(15,22,34,.34);
+  padding:15px 16px}
+.dcard.on{border-color:#C9DAFB;box-shadow:0 10px 26px -14px rgba(37,99,235,.5)}
+.dc-top{display:flex;align-items:flex-start;gap:12px}
+.dc-top h4{margin:0;font-family:"Manrope",sans-serif;font-size:15px;font-weight:800;letter-spacing:-.025em;line-height:1.25}
+.dc-id{font-family:"Noto Sans",sans-serif;font-size:11.5px;color:#8B95A6;margin-top:2px;letter-spacing:-.01em}
+.dc-grid{display:flex;gap:8px;margin-top:12px}
+.dc-t{flex:1;min-width:0;background:#F5F7FA;border-radius:13px;padding:9px 10px}
+.dc-t .k{font-size:9.5px;font-weight:700;color:#8B95A6;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+.dc-t .v{font-family:"Manrope",sans-serif;font-size:15px;font-weight:800;letter-spacing:-.04em;margin-top:1px}
+.dc-acts{display:flex;gap:8px;margin-top:12px}
+.dc-acts .dbtn{flex:1;height:40px}
+.dfilt{position:absolute;right:74px;top:20px;background:#fff;border-radius:16px;padding:9px 10px;
+  box-shadow:0 8px 22px -14px rgba(15,22,34,.4);display:flex;align-items:center;gap:8px}
+.dctl{position:absolute;right:20px;top:20px;background:#fff;border-radius:14px;overflow:hidden;
+  box-shadow:0 8px 22px -14px rgba(15,22,34,.4)}
+.dctl div{width:38px;height:38px;display:grid;place-items:center;color:#4A5567;border-bottom:1px solid #EFF2F6}
+.dctl div:last-child{border-bottom:0}
+.dctl div.on{color:#2563EB}
+.dpin{position:absolute;transform:translate(-50%,-100%)}
+.dpin svg:first-child{width:48px;height:58px;display:block}
+.dpin:not(.act) svg:first-child circle{display:block}
+.dpin:not(.act) svg:nth-child(2){width:21px;height:21px;left:13.5px !important;top:11.5px !important}
+.dpin.act svg:first-child{width:48px;height:58px}
+.dpin.act svg:nth-child(2){width:21px;height:21px;left:13.5px !important;top:11.5px !important}
+.dpin.act svg:first-child path{fill:#2563EB}
+
+@media (max-width:900px){ .deskgroup{padding:0 20px} }
+@media (max-width:760px){
+  .deskframe{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px}
+  .deskframe::-webkit-scrollbar{height:0}
+}
+
 
 /* ═══════════════════════════════════════════════
    UI KIT — laid out on the same card system as the case
@@ -434,6 +588,7 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
   backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
 }
 .kit-panel.w6{grid-column:span 6}
+.kit-panel.type-panel{align-self:stretch}
 .kit-panel.w8{grid-column:span 8}
 .kit-panel.w12{grid-column:span 12}
 .foundation-icons,
@@ -563,6 +718,13 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
   <path d="M16.4 6.2a3.2 3.2 0 010 6.1M18.1 14.8c2.1.6 3.4 2.3 3.8 4.8"/></symbol>
 <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
   <path d="M12 3.2 3.4 7.6 12 12l8.6-4.4L12 3.2Z"/><path d="M3.4 12 12 16.4 20.6 12"/><path d="M3.4 16.4 12 20.8l8.6-4.4"/></symbol>
+
+<symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v13m0 0l-5-5m5 5l5-5M5 20h14"/></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v2.4M12 18.8v2.4M21.2 12h-2.4M5.2 12H2.8M18.5 5.5l-1.7 1.7M7.2 16.8l-1.7 1.7M18.5 18.5l-1.7-1.7M7.2 7.2L5.5 5.5" stroke-linecap="round"/></symbol>
+<symbol id="i-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6.5" cy="7" r="2.5"/><circle cx="17.5" cy="17" r="2.5"/><path d="M9 7h7a3 3 0 010 6H8a3 3 0 000 6h7"/></symbol>
+<symbol id="i-mapbook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 6.5l6-2.5 6 2.5 6-2.5v13l-6 2.5-6-2.5-6 2.5z"/><path d="M9 4v13M15 7v13"/></symbol>
+<symbol id="i-dn6" viewBox="0 0 10 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 2l3.5 3.2L8.5 2"/></symbol>
+<symbol id="i-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M5 20V12M12 20V5M19 20v-6"/></symbol>
 </defs></svg>
 
 <nav class="nav" id="top">
@@ -648,13 +810,13 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
 <div class="gallery-container">
   <div class="gallery-wrapper">
     <div class="gallery-item">
-      <img src="https://cdn.prod.website-files.com/662e9bf054d78aed6d52eae4/6a8da9d081b1305293332c8c_ChatGPT%20Image%2025%20%D0%B0%D0%B2%D0%B3.%202026%20%D0%B3.%2C%2011_06_19.png" alt="Fieldman gallery 1">
+      <img src="https://cdn.prod.website-files.com/662e9bf054d78aed6d52eae4/6a94b4084fd7d63de114ddf6_ChatGPT%20Image%2030%20%D0%B0%D0%B2%D0%B3.%202026%20%D0%B3.%2C%2018_35_32.png" alt="Fieldman gallery 1">
     </div>
     <div class="gallery-item">
-      <img src="https://cdn.prod.website-files.com/662e9bf054d78aed6d52eae4/6a8daadbe0641067317af8bc_ChatGPT%20Image%2025%20%D0%B0%D0%B2%D0%B3.%202026%20%D0%B3.%2C%2010_51_01.png" alt="Fieldman gallery 2">
+      <img src="https://cdn.prod.website-files.com/662e9bf054d78aed6d52eae4/6a94b67f542eacf17d39f83c_ChatGPT%20Image%2030%20%D0%B0%D0%B2%D0%B3.%202026%20%D0%B3.%2C%2020_01_53.png" alt="Fieldman gallery 2">
     </div>
     <div class="gallery-item">
-      <img src="https://cdn.prod.website-files.com/662e9bf054d78aed6d52eae4/6a8da9cf88906dd7f71136cb_23r23r.jpg" alt="Fieldman gallery 3">
+      <img src="https://cdn.prod.website-files.com/662e9bf054d78aed6d52eae4/6a94b40806f573e20c15d36c_ChatGPT%20Image%2030%20%D0%B0%D0%B2%D0%B3.%202026%20%D0%B3.%2C%2018_36_52.png" alt="Fieldman gallery 3">
     </div>
   </div>
 </div>
@@ -1251,6 +1413,372 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
       </div>
 
     </div>
+
+<div class="deskgroup">
+
+    <!-- ── desktop 01 · endpoints ── -->
+    <div class="deskshot">
+      <div class="deskframe"><div class="deskscale"><div class="dwin">
+        <div class="dbar"><i></i><i></i><i></i><span class="u"><svg width="11" height="11"><use href="#i-lock"/></svg>fieldman.app/endpoints</span></div>
+
+        <div class="dshell" style="height:880px">
+          <div class="drail">
+            <div class="dlogo"><span class="mk"><svg width="15" height="15"><use href="#i-bolt"/></svg></span><b>Fieldman</b></div>
+            <div class="dnav">
+              <div class="ditem on"><svg width="18" height="18"><use href="#i-gauge"/></svg>Endpoints<span class="n">148</span></div>
+              <div class="ditem"><svg width="18" height="18"><use href="#i-clipboard"/></svg>Work orders<span class="n">32</span></div>
+              <div class="ditem"><svg width="18" height="18"><use href="#i-route"/></svg>Routes</div>
+              <div class="ditem"><svg width="18" height="18"><use href="#i-mapbook"/></svg>Map</div>
+              <div class="ditem"><svg width="18" height="18"><use href="#i-user"/></svg>Crews</div>
+              <div class="ditem"><svg width="18" height="18"><use href="#i-box"/></svg>Inventory</div>
+              <div class="ditem"><svg width="18" height="18"><use href="#i-bars"/></svg>Reports</div>
+              <div class="ditem"><svg width="18" height="18"><use href="#i-gear"/></svg>Settings</div>
+            </div>
+            <div class="who"><span class="av">👷</span><span><b>Mark Broadhead</b><span>Crew 12 · Dispatch</span></span></div>
+          </div>
+
+          <div class="dmain">
+            <div class="dhead">
+              <div class="dhead-top">
+                <div>
+                  <div class="dcrumb">Wednesday, 29 September</div>
+                  <h1 class="dh1">Endpoints</h1>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span class="dsearch"><svg width="14" height="14"><use href="#i-search"/></svg>Search by meter, premise or name</span>
+                  <span class="dbtn ghost"><svg width="15" height="15"><use href="#i-down"/></svg>Export</span>
+                  <span class="dbtn"><svg width="15" height="15"><use href="#i-plus"/></svg>New work order</span>
+                </div>
+              </div>
+
+              <div class="dstats">
+                <div class="dstat"><div class="k">Endpoints</div><div class="v">148</div></div>
+                <div class="dstat"><div class="k">Scheduled</div><div class="v">92</div></div>
+                <div class="dstat"><div class="k">Completed</div><div class="v">117</div></div>
+                <div class="dstat"><div class="k">Pending sync</div><div class="v">2</div></div>
+                <div class="dstat"><div class="k">On the clock</div><div class="v">1<small>h</small> 35<small>m</small></div></div>
+              </div>
+            </div>
+
+            <div class="dsheet">
+              <div class="dsheet-top">
+                <h3>All endpoints</h3>
+                <div class="dchips">
+                  <span class="dchip on">All <span class="v">148</span></span>
+                  <span class="dchip">Electric <span class="v">61</span></span>
+                  <span class="dchip">Water <span class="v">48</span></span>
+                  <span class="dchip">Gas <span class="v">39</span></span>
+                </div>
+                <div class="sp">
+                  <span class="dchip">Route <span class="v">All</span> <svg width="10" height="10"><use href="#i-chevd"/></svg></span>
+                  <span class="dchip">Crew <span class="v">All</span> <svg width="10" height="10"><use href="#i-chevd"/></svg></span>
+                  <span class="dbtn ghost icon"><svg width="16" height="16"><use href="#i-sort"/></svg></span>
+                </div>
+              </div>
+
+              <table class="dtbl">
+                <thead>
+                  <tr>
+                    <th style="width:44px"><span class="dcbx"></span></th>
+                    <th style="width:66px">Type</th>
+                    <th><span class="hd">Meter ID <svg width="9" height="6"><use href="#i-dn6"/></svg></span></th>
+                    <th><span class="hd">Premise</span></th>
+                    <th><span class="hd">Customer</span></th>
+                    <th><span class="hd">Address</span></th>
+                    <th><span class="hd">Job</span></th>
+                    <th><span class="hd">Window</span></th>
+                    <th><span class="hd">Crew</span></th>
+                    <th><span class="hd">Status</span></th>
+                    <th style="width:44px"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="dcbx"></span></td>
+                    <td><span class="dtrade" style="background:#FFF0C8;color:#8A5D00"><svg width="17" height="17"><use href="#i-bolt"/></svg></span></td>
+                    <td class="dmono">10506467</td><td class="dmono">46-002262</td>
+                    <td class="dname">Jonathan Carter</td><td>2040 Newton Rd</td>
+                    <td><span class="pill pill-amber">Meter read</span></td>
+                    <td class="dmono">10:00–12:00</td><td>Crew 12</td>
+                    <td><span class="dsync ok"><i></i>Synced</span></td>
+                    <td><svg width="15" height="15" style="color:#B4BECD"><use href="#i-chev"/></svg></td>
+                  </tr>
+                  <tr>
+                    <td><span class="dcbx"></span></td>
+                    <td><span class="dtrade" style="background:#DEE9FE;color:#1E4FBE"><svg width="17" height="17"><use href="#i-drop"/></svg></span></td>
+                    <td class="dmono">10506482</td><td class="dmono">46-002263</td>
+                    <td class="dname">John Thresher</td><td>701 Corn Ave</td>
+                    <td><span class="pill pill-blue">Exchange</span></td>
+                    <td class="dmono">10:30–13:00</td><td>Crew 12</td>
+                    <td><span class="dsync ok"><i></i>Synced</span></td>
+                    <td><svg width="15" height="15" style="color:#B4BECD"><use href="#i-chev"/></svg></td>
+                  </tr>
+                  <tr>
+                    <td><span class="dcbx"></span></td>
+                    <td><span class="dtrade" style="background:#FFE3E0;color:#B03A30"><svg width="17" height="17"><use href="#i-flame"/></svg></span></td>
+                    <td class="dmono">10506490</td><td class="dmono">46-002271</td>
+                    <td class="dname">David Blevins</td><td>2710 W Oakridge Dr 56</td>
+                    <td><span class="pill pill-amber">Meter read</span></td>
+                    <td class="dmono">11:00–14:00</td><td>Crew 4</td>
+                    <td><span class="dsync wait"><i></i>Pending</span></td>
+                    <td><svg width="15" height="15" style="color:#B4BECD"><use href="#i-chev"/></svg></td>
+                  </tr>
+                  <tr class="sel">
+                    <td><span class="dcbx on"><svg width="10" height="10"><use href="#i-check"/></svg></span></td>
+                    <td><span class="dtrade" style="background:#DEE9FE;color:#1E4FBE"><svg width="17" height="17"><use href="#i-grid4"/></svg></span></td>
+                    <td class="dmono">10506503</td><td class="dmono">46-002280</td>
+                    <td class="dname">Miguel Parson</td><td>618 Willard Ave</td>
+                    <td><span class="pill pill-blue">2 jobs</span></td>
+                    <td class="dmono">13:00–16:00</td><td>Crew 12</td>
+                    <td><span class="dsync ok"><i></i>Synced</span></td>
+                    <td><svg width="15" height="15" style="color:#2563EB"><use href="#i-chev"/></svg></td>
+                  </tr>
+                  <tr>
+                    <td><span class="dcbx"></span></td>
+                    <td><span class="dtrade" style="background:#FFF0C8;color:#8A5D00"><svg width="17" height="17"><use href="#i-bolt"/></svg></span></td>
+                    <td class="dmono">10506511</td><td class="dmono">46-002284</td>
+                    <td class="dname">Jerry Frye</td><td>2228 S Jackson St A</td>
+                    <td><span class="pill pill-amber">Meter read</span></td>
+                    <td class="dmono">13:30–15:00</td><td>Crew 4</td>
+                    <td><span class="dsync wait"><i></i>Pending</span></td>
+                    <td><svg width="15" height="15" style="color:#B4BECD"><use href="#i-chev"/></svg></td>
+                  </tr>
+                  <tr>
+                    <td><span class="dcbx"></span></td>
+                    <td><span class="dtrade" style="background:#DEE9FE;color:#1E4FBE"><svg width="17" height="17"><use href="#i-drop"/></svg></span></td>
+                    <td class="dmono">10506524</td><td class="dmono">46-002290</td>
+                    <td class="dname">Mark Whitten</td><td>214 Wells Ave</td>
+                    <td><span class="pill pill-blue">Exchange</span></td>
+                    <td class="dmono">14:00–16:00</td><td>Crew 7</td>
+                    <td><span class="dsync ok"><i></i>Synced</span></td>
+                    <td><svg width="15" height="15" style="color:#B4BECD"><use href="#i-chev"/></svg></td>
+                  </tr>
+                  <tr>
+                    <td><span class="dcbx"></span></td>
+                    <td><span class="dtrade" style="background:#FFE3E0;color:#B03A30"><svg width="17" height="17"><use href="#i-flame"/></svg></span></td>
+                    <td class="dmono">10506538</td><td class="dmono">46-002295</td>
+                    <td class="dname">Christopher Bergman</td><td>226 Tremont Ave</td>
+                    <td><span class="pill pill-amber">Meter read</span></td>
+                    <td class="dmono">14:30–17:00</td><td>Crew 7</td>
+                    <td><span class="dsync ok"><i></i>Synced</span></td>
+                    <td><svg width="15" height="15" style="color:#B4BECD"><use href="#i-chev"/></svg></td>
+                  </tr>
+                  <tr>
+                    <td><span class="dcbx"></span></td>
+                    <td><span class="dtrade" style="background:#FFF0C8;color:#8A5D00"><svg width="17" height="17"><use href="#i-bolt"/></svg></span></td>
+                    <td class="dmono">10506545</td><td class="dmono">46-002301</td>
+                    <td class="dname">James Ruffin</td><td>402 Wadkins Ave</td>
+                    <td><span class="pill pill-blue">Exchange</span></td>
+                    <td class="dmono">15:00–17:30</td><td>Crew 12</td>
+                    <td><span class="dsync ok"><i></i>Synced</span></td>
+                    <td><svg width="15" height="15" style="color:#B4BECD"><use href="#i-chev"/></svg></td>
+                  </tr>
+                  <tr>
+                    <td><span class="dcbx"></span></td>
+                    <td><span class="dtrade" style="background:#DEE9FE;color:#1E4FBE"><svg width="17" height="17"><use href="#i-drop"/></svg></span></td>
+                    <td class="dmono">10506559</td><td class="dmono">46-002308</td>
+                    <td class="dname">Jason Shockley</td><td>304 Wells Ave</td>
+                    <td><span class="pill pill-amber">Meter read</span></td>
+                    <td class="dmono">15:30–18:00</td><td>Crew 4</td>
+                    <td><span class="dsync ok"><i></i>Synced</span></td>
+                    <td><svg width="15" height="15" style="color:#B4BECD"><use href="#i-chev"/></svg></td>
+                  </tr>
+                  <tr>
+                    <td><span class="dcbx"></span></td>
+                    <td><span class="dtrade" style="background:#F5F7FA;color:#4A5567"><svg width="17" height="17"><use href="#i-gauge"/></svg></span></td>
+                    <td class="dmono">10506566</td><td class="dmono">46-002312</td>
+                    <td class="dname">Douglas Brien</td><td>2101 S Madison St</td>
+                    <td><span class="pill" style="background:#EEF1F6;color:#5B6A80">Inspection</span></td>
+                    <td class="dmono">16:00–18:00</td><td>Crew 7</td>
+                    <td><span class="dsync wait"><i></i>Pending</span></td>
+                    <td><svg width="15" height="15" style="color:#B4BECD"><use href="#i-chev"/></svg></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div></div></div>
+      <div class="desk-cap"><b>Endpoints — dispatch</b><span>The office side of the same product, built from the phone's own parts: the sky wash and the white sheet, the trade icon that already means gas or water in the field, the same pills, and the sync state a technician sees on their profile. A dispatcher and a technician are looking at one system, not two.</span></div>
+    </div>
+
+    <!-- ── desktop 02 · map ── -->
+    <div class="deskshot">
+      <div class="deskframe"><div class="deskscale"><div class="dwin">
+        <div class="dbar"><i></i><i></i><i></i><span class="u"><svg width="11" height="11"><use href="#i-lock"/></svg>fieldman.app/map</span></div>
+
+        <div class="dshell" style="height:880px">
+          <div class="drail">
+            <div class="dlogo"><span class="mk"><svg width="15" height="15"><use href="#i-bolt"/></svg></span><b>Fieldman</b></div>
+            <div class="dnav">
+              <div class="ditem"><svg width="18" height="18"><use href="#i-gauge"/></svg>Endpoints<span class="n">148</span></div>
+              <div class="ditem"><svg width="18" height="18"><use href="#i-clipboard"/></svg>Work orders<span class="n">32</span></div>
+              <div class="ditem"><svg width="18" height="18"><use href="#i-route"/></svg>Routes</div>
+              <div class="ditem on"><svg width="18" height="18"><use href="#i-mapbook"/></svg>Map<span class="n">11</span></div>
+              <div class="ditem"><svg width="18" height="18"><use href="#i-user"/></svg>Crews</div>
+              <div class="ditem"><svg width="18" height="18"><use href="#i-box"/></svg>Inventory</div>
+              <div class="ditem"><svg width="18" height="18"><use href="#i-bars"/></svg>Reports</div>
+              <div class="ditem"><svg width="18" height="18"><use href="#i-gear"/></svg>Settings</div>
+            </div>
+            <div class="who"><span class="av">👷</span><span><b>Mark Broadhead</b><span>Crew 12 · Dispatch</span></span></div>
+          </div>
+
+          <div class="dmain">
+            <div class="dhead">
+              <div class="dhead-top">
+                <div>
+                  <div class="dcrumb">Live · updated 09:38</div>
+                  <h1 class="dh1">Map</h1>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span class="dsearch"><svg width="14" height="14"><use href="#i-search"/></svg>Search crews, stops or addresses</span>
+                  <span class="dbtn ghost"><svg width="15" height="15"><use href="#i-route"/></svg>Optimise route</span>
+                  <span class="dbtn"><svg width="15" height="15"><use href="#i-plus"/></svg>New work order</span>
+                </div>
+              </div>
+              <div class="dstats">
+                <div class="dstat"><div class="k">Crews out</div><div class="v">11</div></div>
+                <div class="dstat"><div class="k">Stops left</div><div class="v">25</div></div>
+                <div class="dstat"><div class="k">Completed</div><div class="v">117</div></div>
+                <div class="dstat"><div class="k">Avg drive</div><div class="v">11<small>min</small></div></div>
+              </div>
+            </div>
+
+            <div class="dmap">
+              <svg class="dmapsvg" viewBox="0 0 1394 812" preserveAspectRatio="none">
+                <rect width="1394" height="812" fill="#EDF0F4"/>
+                <g fill="#E3E7ED">
+                  <rect x="26" y="26" width="118" height="86" rx="6"/><rect x="168" y="22" width="146" height="92" rx="6"/>
+                  <rect x="338" y="30" width="122" height="80" rx="6"/><rect x="540" y="24" width="134" height="90" rx="6"/>
+                  <rect x="700" y="26" width="146" height="88" rx="6"/><rect x="872" y="22" width="128" height="92" rx="6"/>
+                  <rect x="1026" y="30" width="138" height="82" rx="6"/><rect x="1190" y="26" width="118" height="88" rx="6"/>
+                  <rect x="24" y="162" width="104" height="108" rx="6"/><rect x="482" y="156" width="138" height="114" rx="6"/>
+                  <rect x="646" y="162" width="126" height="106" rx="6"/><rect x="872" y="156" width="146" height="112" rx="6"/>
+                  <rect x="1050" y="160" width="124" height="108" rx="6"/><rect x="1206" y="158" width="126" height="110" rx="6"/>
+                  <rect x="26" y="318" width="118" height="98" rx="6"/><rect x="174" y="314" width="132" height="102" rx="6"/>
+                  <rect x="482" y="318" width="128" height="96" rx="6"/><rect x="656" y="314" width="146" height="102" rx="6"/>
+                  <rect x="872" y="318" width="126" height="98" rx="6"/><rect x="1046" y="314" width="142" height="102" rx="6"/>
+                  <rect x="1224" y="318" width="116" height="98" rx="6"/>
+                  <rect x="34" y="466" width="126" height="106" rx="6"/><rect x="200" y="462" width="136" height="110" rx="6"/>
+                  <rect x="500" y="466" width="146" height="104" rx="6"/><rect x="694" y="462" width="128" height="110" rx="6"/>
+                  <rect x="872" y="466" width="136" height="106" rx="6"/><rect x="1054" y="462" width="126" height="110" rx="6"/>
+                  <rect x="1224" y="466" width="122" height="106" rx="6"/>
+                  <rect x="52" y="620" width="128" height="100" rx="6"/><rect x="216" y="624" width="124" height="96" rx="6"/>
+                  <rect x="518" y="620" width="138" height="100" rx="6"/><rect x="708" y="622" width="128" height="98" rx="6"/>
+                  <rect x="900" y="620" width="142" height="100" rx="6"/><rect x="1090" y="622" width="126" height="98" rx="6"/>
+                </g>
+                <g fill="#DCEAD9">
+                  <rect x="170" y="158" width="278" height="112" rx="11"/>
+                  <rect x="1198" y="148" width="150" height="118" rx="11"/>
+                </g>
+                <g fill="#CFE2F5"><path d="M1352 128 C 1378 208, 1344 278, 1374 348 L1394 366 L1394 114 Z"/></g>
+                <text x="190" y="220" font-family="Noto Sans" font-size="12.5" fill="#89A386" font-weight="600">Hospital Hill Park</text>
+                <text x="1218" y="212" font-family="Noto Sans" font-size="12" fill="#89A386" font-weight="600">Yoctangee Park</text>
+                <g stroke="#FFFFFF" fill="none" stroke-linecap="round">
+                  <path d="M0 138h1394" stroke-width="13"/>
+                  <path d="M0 292h1394" stroke-width="16"/>
+                  <path d="M0 440h1394" stroke-width="13"/>
+                  <path d="M0 596h1394" stroke-width="14"/>
+                  <path d="M0 748h1394" stroke-width="12"/>
+                  <path d="M0 326 C 360 318, 720 296, 1394 250" stroke-width="15"/>
+                  <path d="M156 0v812" stroke-width="12"/>
+                  <path d="M468 0v812" stroke-width="13"/>
+                  <path d="M634 0 C 630 250, 608 470, 590 812" stroke-width="15"/>
+                  <path d="M856 0v812" stroke-width="12"/>
+                  <path d="M1036 0v812" stroke-width="13"/>
+                  <path d="M1206 0v812" stroke-width="11"/>
+                </g>
+                <g font-family="Noto Sans" font-size="10" fill="#A6AFBE" font-weight="600">
+                  <text x="30" y="132">CHEROKEE RD</text><text x="686" y="132">ALLEN AVE</text><text x="1074" y="132">RACE ST</text>
+                  <text x="30" y="286">ARCH ST</text><text x="880" y="286">CHESTNUT ST</text>
+                  <text x="30" y="434">WESTERN AVE</text><text x="880" y="434">W WATER ST</text>
+                  <text x="30" y="590">W 5TH ST</text><text x="880" y="590">E MAIN ST</text>
+                  <text x="164" y="66" transform="rotate(90 164 66)">PIATT AVE</text>
+                  <text x="864" y="496" transform="rotate(90 864 496)">N HIGH ST</text>
+                </g>
+              </svg>
+
+              <!-- pins: amber by trade, blue for the selected crew -->
+              <span class="dpin" style="left:34%;top:37%"><svg width="48" height="58" viewBox="0 0 34 42"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 102 16c0 9.5 15 25 15 25z" fill="#FFC531"/><circle cx="17" cy="16" r="11" fill="#fff" fill-opacity=".35"/></svg><svg width="20" height="20" style="position:absolute;left:14px;top:12px;color:#5C3F00"><use href="#i-bolt"/></svg></span>
+              <span class="dpin act" style="left:75%;top:46%"><svg width="46" height="56" viewBox="0 0 34 42"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 102 16c0 9.5 15 25 15 25z" fill="#2563EB"/></svg><svg width="17" height="17" style="position:absolute;left:14px;top:11px;color:#fff"><use href="#i-grid4"/></svg></span>
+              <span class="dpin" style="left:50%;top:58%"><svg width="48" height="58" viewBox="0 0 34 42"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 102 16c0 9.5 15 25 15 25z" fill="#FFC531"/><circle cx="17" cy="16" r="11" fill="#fff" fill-opacity=".35"/></svg><svg width="20" height="20" style="position:absolute;left:14px;top:12px;color:#5C3F00"><use href="#i-drop"/></svg></span>
+              <span class="dpin" style="left:61%;top:64%"><svg width="48" height="58" viewBox="0 0 34 42"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 102 16c0 9.5 15 25 15 25z" fill="#FFC531"/><circle cx="17" cy="16" r="11" fill="#fff" fill-opacity=".35"/></svg><svg width="20" height="20" style="position:absolute;left:14px;top:12px;color:#5C3F00"><use href="#i-flame"/></svg></span>
+              <span class="dpin" style="left:69%;top:79%"><svg width="48" height="58" viewBox="0 0 34 42"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 102 16c0 9.5 15 25 15 25z" fill="#FFC531"/><circle cx="17" cy="16" r="11" fill="#fff" fill-opacity=".35"/></svg><svg width="20" height="20" style="position:absolute;left:14px;top:12px;color:#5C3F00"><use href="#i-gauge"/></svg></span>
+              <span class="dpin" style="left:56%;top:26%"><svg width="48" height="58" viewBox="0 0 34 42"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 102 16c0 9.5 15 25 15 25z" fill="#FFC531"/><circle cx="17" cy="16" r="11" fill="#fff" fill-opacity=".35"/></svg><svg width="20" height="20" style="position:absolute;left:14px;top:12px;color:#5C3F00"><use href="#i-bolt"/></svg></span>
+              <span class="dpin" style="left:72%;top:33%"><svg width="48" height="58" viewBox="0 0 34 42"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 102 16c0 9.5 15 25 15 25z" fill="#FFC531"/><circle cx="17" cy="16" r="11" fill="#fff" fill-opacity=".35"/></svg><svg width="20" height="20" style="position:absolute;left:14px;top:12px;color:#5C3F00"><use href="#i-drop"/></svg></span>
+              <span class="dpin" style="left:84%;top:47%"><svg width="48" height="58" viewBox="0 0 34 42"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 102 16c0 9.5 15 25 15 25z" fill="#FFC531"/><circle cx="17" cy="16" r="11" fill="#fff" fill-opacity=".35"/></svg><svg width="20" height="20" style="position:absolute;left:14px;top:12px;color:#5C3F00"><use href="#i-flame"/></svg></span>
+              <span class="dpin" style="left:88%;top:70%"><svg width="48" height="58" viewBox="0 0 34 42"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 102 16c0 9.5 15 25 15 25z" fill="#FFC531"/><circle cx="17" cy="16" r="11" fill="#fff" fill-opacity=".35"/></svg><svg width="20" height="20" style="position:absolute;left:14px;top:12px;color:#5C3F00"><use href="#i-bolt"/></svg></span>
+              <span class="dpin" style="left:37%;top:73%"><svg width="48" height="58" viewBox="0 0 34 42"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 102 16c0 9.5 15 25 15 25z" fill="#FFC531"/><circle cx="17" cy="16" r="11" fill="#fff" fill-opacity=".35"/></svg><svg width="20" height="20" style="position:absolute;left:14px;top:12px;color:#5C3F00"><use href="#i-drop"/></svg></span>
+              <span class="dpin" style="left:78%;top:22%"><svg width="48" height="58" viewBox="0 0 34 42"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 102 16c0 9.5 15 25 15 25z" fill="#FFC531"/><circle cx="17" cy="16" r="11" fill="#fff" fill-opacity=".35"/></svg><svg width="20" height="20" style="position:absolute;left:14px;top:12px;color:#5C3F00"><use href="#i-gauge"/></svg></span>
+
+              <div class="dpanel">
+                <div class="dp-head"><h3>Crews on the map</h3><span class="c">11 active</span></div>
+
+                <div class="dcard on">
+                  <div class="dc-top">
+                    <span class="dtrade" style="background:#2563EB;color:#fff"><svg width="17" height="17"><use href="#i-grid4"/></svg></span>
+                    <div style="flex:1;min-width:0">
+                      <div style="display:flex;gap:6px;margin-bottom:5px"><span class="pill pill-green"><span style="width:6px;height:6px;border-radius:50%;background:#2563EB;display:block"></span>On route</span></div>
+                      <h4>Crew 12 · M. Broadhead</h4>
+                      <div class="dc-id">Truck 484N14-00 · 618 Willard Ave</div>
+                    </div>
+                  </div>
+                  <div class="dc-grid">
+                    <div class="dc-t"><div class="k">Stops left</div><div class="v">5</div></div>
+                    <div class="dc-t"><div class="k">Next in</div><div class="v">11<span style="font-size:11px;color:#6E7B90"> min</span></div></div>
+                    <div class="dc-t"><div class="k">On clock</div><div class="v">1:35</div></div>
+                  </div>
+                  <div class="dc-acts"><span class="dbtn ghost">Open route</span><span class="dbtn">Assign job</span></div>
+                </div>
+
+                <div class="dcard">
+                  <div class="dc-top">
+                    <span class="dtrade" style="background:#FFF0C8;color:#8A5D00"><svg width="17" height="17"><use href="#i-grid4"/></svg></span>
+                    <div style="flex:1;min-width:0">
+                      <div style="display:flex;gap:6px;margin-bottom:5px"><span class="pill pill-amber">At a stop</span></div>
+                      <h4>Crew 4 · J. Ruffin</h4>
+                      <div class="dc-id">Truck 484N14-07 · 2228 S Jackson St</div>
+                    </div>
+                  </div>
+                  <div class="dc-grid">
+                    <div class="dc-t"><div class="k">Stops left</div><div class="v">8</div></div>
+                    <div class="dc-t"><div class="k">Next in</div><div class="v">24<span style="font-size:11px;color:#6E7B90"> min</span></div></div>
+                    <div class="dc-t"><div class="k">On clock</div><div class="v">2:10</div></div>
+                  </div>
+                  <div class="dc-acts"><span class="dbtn ghost">Open route</span><span class="dbtn">Assign job</span></div>
+                </div>
+
+                <div class="dcard">
+                  <div class="dc-top">
+                    <span class="dtrade" style="background:#F5F7FA;color:#4A5567"><svg width="17" height="17"><use href="#i-grid4"/></svg></span>
+                    <div style="flex:1;min-width:0">
+                      <div style="display:flex;gap:6px;margin-bottom:5px"><span class="pill" style="background:#EEF1F6;color:#5B6A80">Driving</span></div>
+                      <h4>Crew 7 · A. Thornsberry</h4>
+                      <div class="dc-id">Truck 484N14-03 · en route to 226 Tremont</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dfilt">
+                <span class="dchip on">Crews</span>
+                <span class="dchip">Stops</span>
+                <span class="dchip">Unassigned <span class="v">3</span></span>
+              </div>
+
+              <div class="dctl">
+                <div><svg width="16" height="16"><use href="#i-plus"/></svg></div>
+                <div><svg width="16" height="16"><use href="#i-minus"/></svg></div>
+                <div class="on"><svg width="16" height="16"><use href="#i-locate"/></svg></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></div></div>
+      <div class="desk-cap"><b>Map — dispatch</b><span>The phone's map screen given room to work. The selected crew turns blue and draws its route, the cards carry the same glass tiles the technician reads on their own home screen, and the two actions a dispatcher takes — reroute, or hand over a job — are the only buttons on the page.</span></div>
+    </div>
+
+  </div>
   </div>
 </section>
 
@@ -1291,11 +1819,10 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
             <div class="h">#C2D8F6 → #FFF</div>
           </div>
         </div>
-        <p class="kit-note">Tints are fixed pairs rather than opacities, so a pill keeps its contrast over white, over the sky gradient and over a photo thumbnail alike: <b>#DEE9FE / #1E4FBE</b> for blue, <b>#FFF0C8 / #7A5300</b> for amber, <b>#D9F3E4 / #0F7A47</b> for green.</p>
       </div>
 
       <!-- ── type ── -->
-      <div class="kit-panel w6">
+      <div class="kit-panel w6 type-panel">
         <p class="kit-lbl">Typography</p>
         <div class="typerow">
           <div class="typespec">
@@ -1319,7 +1846,6 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
             <span class="meta">Noto Sans 700<br>Label · 10–11px caps</span>
           </div>
         </div>
-        <p class="kit-note">Numbers are always tabular. A reading, a serial and a coordinate never reflow between screens, which is what lets a technician compare a dial to a field without re-reading it.</p>
       </div>
 
       <!-- ── components ── -->
@@ -1392,16 +1918,6 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
           <div style="width:52px;height:44px;border-radius:14px;background:#DBEAFE;display:grid;place-items:center;color:#2563EB"><svg width="18" height="18"><use href="#i-check"/></svg></div>
         </div>
 
-        <p class="board-cap">Tab bar</p>
-        <div class="board col">
-          <div class="tabs" style="border-radius:14px;border:1px solid #EEF1F6;padding:10px 12px 12px">
-            <div class="tab on"><svg width="22" height="22"><use href="#i-home"/></svg>Tab<span class="tdot"></span></div>
-            <div class="tab"><svg width="22" height="22"><use href="#i-pin"/></svg>Tab<span class="tdot"></span></div>
-            <div class="tab"><svg width="22" height="22"><use href="#i-clock"/></svg>Tab<span class="tdot"></span></div>
-            <div class="tab"><svg width="22" height="22"><use href="#i-user"/></svg>Tab<span class="tdot"></span></div>
-          </div>
-        </div>
-
         </div><div>
 
         <p class="board-cap">Segmented control</p>
@@ -1443,27 +1959,13 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
           </div>
         </div>
 
-        <p class="board-cap">Data tile</p>
-        <div class="board" style="background:linear-gradient(178deg,#C2D8F6,#DAE8FA 60%,#EFF4FB)">
-          <div style="display:flex;gap:8px;flex:1;min-width:200px">
-            <div class="glass" style="flex:1;padding:10px 6px;text-align:center">
-              <div style="font-size:10.5px;font-weight:700;color:#5B6A80;letter-spacing:.06em;text-transform:uppercase">Label</div>
-              <div class="pnum" style="font-size:21px;margin-top:1px">Value</div>
-            </div>
-            <div class="glass" style="flex:1;padding:10px 6px;text-align:center">
-              <div style="font-size:10.5px;font-weight:700;color:#5B6A80;letter-spacing:.06em;text-transform:uppercase">Label</div>
-              <div class="pnum" style="font-size:21px;margin-top:1px">Value</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:8px;flex:1;min-width:200px">
-            <div style="flex:1;background:#F5F7FA;border-radius:13px;padding:9px 11px">
-              <div style="font-size:10px;font-weight:700;color:#8B95A6;letter-spacing:.06em;text-transform:uppercase">Label</div>
-              <div class="pnum" style="font-size:15px;margin-top:1px">Value</div>
-            </div>
-            <div style="flex:1;background:#F5F7FA;border-radius:13px;padding:9px 11px">
-              <div style="font-size:10px;font-weight:700;color:#8B95A6;letter-spacing:.06em;text-transform:uppercase">Label</div>
-              <div class="pnum" style="font-size:15px;margin-top:1px">Value</div>
-            </div>
+        <p class="board-cap">Tab bar</p>
+        <div class="board col">
+          <div class="tabs" style="border-radius:14px;border:1px solid #EEF1F6;padding:10px 12px 12px">
+            <div class="tab on"><svg width="22" height="22"><use href="#i-home"/></svg>Tab<span class="tdot"></span></div>
+            <div class="tab"><svg width="22" height="22"><use href="#i-pin"/></svg>Tab<span class="tdot"></span></div>
+            <div class="tab"><svg width="22" height="22"><use href="#i-clock"/></svg>Tab<span class="tdot"></span></div>
+            <div class="tab"><svg width="22" height="22"><use href="#i-user"/></svg>Tab<span class="tdot"></span></div>
           </div>
         </div>
 
@@ -1647,6 +2149,26 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
     });
   }, { threshold:.1, rootMargin:'0px 0px -50px' });
   rises.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+<script>
+(function(){
+  function fit(){
+    document.querySelectorAll('.deskframe').forEach(function(f){
+      var inner = f.querySelector('.deskscale');
+      if(!inner) return;
+      var k = f.clientWidth / 1600;
+      if (k < 0.42) k = 0.42;
+      inner.style.transform = 'scale(' + k + ')';
+      inner.style.width = 1600 + 'px';
+      f.style.height = Math.round(inner.offsetHeight * k) + 'px';
+    });
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  fit();
 })();
 </script>
 </body>

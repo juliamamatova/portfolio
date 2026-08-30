@@ -1114,12 +1114,55 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
   }
 }
 
+.nav{background:#f7f6f2;}
 </style>
 
 <style>
 .product-lead{
   padding-top:72px;
 }
+
+/* ============================================================
+   SITE NAVIGATION — same navigation as Fieldman
+   ============================================================ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:120;height:var(--nav-h);
+  background:#f7f6f2;border-bottom:1px solid rgba(76,12,135,.10);
+}
+.nav-in{
+  max-width:1180px;margin:0 auto;padding:0 32px;height:100%;
+  display:flex;align-items:center;justify-content:space-between;position:relative;
+}
+.logo{
+  font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.02em;
+  color:#1A0B2E;text-decoration:none;position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);z-index:2;
+}
+.all-cases{
+  display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;
+  font-family:var(--ui);font-size:14px;font-weight:500;color:rgba(26,11,46,.68);
+  background:rgba(76,12,135,.08);text-decoration:none;
+  transition:background-color .18s ease,color .18s ease;position:relative;z-index:3;
+}
+.all-cases:hover{background:#1A0B2E;color:#fff}
+.all-cases svg{width:15px;height:15px;display:block}
+.nav-mail{
+  justify-self:end;font-size:14px;color:rgba(26,11,46,.68);
+  text-decoration:none;transition:color .18s ease;
+}
+.nav-mail:hover{color:#1A0B2E}
+.nav a:focus-visible{outline:2px solid var(--green);outline-offset:4px;border-radius:4px}
+
+@media (max-width:860px){
+  .nav-in{padding:0 20px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .nav-mail{display:none}
+  .nav .logo{
+    position:static;transform:none;margin-left:auto;
+    font-size:20px;letter-spacing:-.025em;
+  }
+  .nav .all-cases{margin-right:auto}
+}
+
 </style>
 
 </head>
@@ -1181,24 +1224,12 @@ main,.masthead,.sec,.shotgroup,.site-foot{position:relative;z-index:1}
 
 <nav class="nav" id="top">
   <div class="nav-in">
+    <a class="all-cases" href="index.html" aria-label="All cases">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      <span>All cases</span>
+    </a>
     <a class="logo" href="index.html">Mamatova</a>
-    <ul class="nav-links">
-      <li><a href="decathlon.html">Decathlon</a></li>
-      <li><a href="megafon.html" aria-current="page">Megafon</a></li>
-      <li><a href="life-impulse.html">Life Impulse</a></li>
-    </ul>
     <a class="nav-mail" href="mailto:julie.mamatova@gmail.com">julie.mamatova@gmail.com</a>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="navpanel" aria-label="Menu">
-      <i></i><i></i><i></i>
-    </button>
-  </div>
-  <div class="nav-panel" id="navpanel">
-    <ul>
-      <li><a href="decathlon.html">Decathlon</a></li>
-      <li><a href="megafon.html" aria-current="page">Megafon</a></li>
-      <li><a href="life-impulse.html">Life Impulse</a></li>
-    </ul>
-    <a class="mail" href="mailto:julie.mamatova@gmail.com">julie.mamatova@gmail.com</a>
   </div>
 </nav>
 

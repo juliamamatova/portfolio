@@ -445,6 +445,26 @@
     }
   }
 
+  @media (max-width: 560px) {
+    header { padding-top: 48px; }
+
+    h1 .silver-phrase::before {
+      content: " ";
+    }
+
+    h1 {
+      font-size: 41px;
+      line-height: 1.03;
+      letter-spacing: -0.055em;
+      max-width: none;
+      text-wrap: wrap;
+    }
+
+    h1 > br {
+      display: none;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; }
   }

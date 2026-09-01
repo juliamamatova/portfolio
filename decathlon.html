@@ -1702,14 +1702,33 @@ img,svg{max-width:100%}
 (function(){
   var nav = document.querySelector('.nav');
   var burger = document.querySelector('.burger');
-  function close(){ nav.classList.remove('is-open'); burger.setAttribute('aria-expanded','false'); }
-  burger.addEventListener('click', function(){
-    var open = nav.classList.toggle('is-open');
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  nav.querySelectorAll('.nav-panel a').forEach(function(a){ a.addEventListener('click', close); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
-  window.addEventListener('resize', function(){ if(window.innerWidth > 860) close(); });
+
+  // Navigation is optional on this page. Do not let a missing mobile
+  // burger abort the rest of the script (including the outcome metrics).
+  function close(){
+    if (!nav) return;
+    nav.classList.remove('is-open');
+    if (burger) burger.setAttribute('aria-expanded','false');
+  }
+
+  if (nav && burger) {
+    burger.addEventListener('click', function(){
+      var open = nav.classList.toggle('is-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    nav.querySelectorAll('.nav-panel a').forEach(function(a){
+      a.addEventListener('click', close);
+    });
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') close();
+    });
+
+    window.addEventListener('resize', function(){
+      if(window.innerWidth > 860) close();
+    });
+  }
 
   // the wrap connector in the customer journey runs from the centre of one pill to the centre of another
   function drawHook(){
@@ -1727,28 +1746,48 @@ img,svg{max-width:100%}
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawHook);
 
 
-  // animate outcome statistics from 0 to their final values on page load
+  // Animate outcome statistics from 0 to their final values.
+  // Kept independent from navigation so a missing optional UI element
+  // can never prevent the metrics from rendering.
   function animateOutcomeStats(){
     var stats = document.querySelectorAll('.outcome-card .stat');
+
     stats.forEach(function(stat, index){
-      var target = parseFloat(stat.dataset.value || stat.textContent);
-      if(!isFinite(target)) return;
-      var suffix = stat.dataset.suffix || (stat.textContent.match(/[%+\w]+$/) || [''])[0];
-      var start = performance.now();
+      var rawTarget = stat.getAttribute('data-value');
+      var target = parseFloat(rawTarget);
+
+      if (!isFinite(target)) {
+        stat.textContent = stat.textContent || '';
+        return;
+      }
+
+      var suffix = stat.getAttribute('data-suffix') || '';
       var duration = 1200;
       var delay = index * 100;
 
+      // Start each timer at the moment its animation actually begins.
       setTimeout(function(){
+        var start = performance.now();
+
         function tick(now){
-          var progress = Math.min((now - start) / duration, 1);
+          var progress = Math.min(Math.max((now - start) / duration, 0), 1);
           var eased = 1 - Math.pow(1 - progress, 3);
           stat.textContent = Math.round(target * eased) + suffix;
-          if(progress < 1) requestAnimationFrame(tick);
+
+          if (progress < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            // Guarantee the exact final value after animation.
+            stat.textContent = target + suffix;
+          }
         }
+
+        stat.textContent = '0' + suffix;
         requestAnimationFrame(tick);
       }, delay);
     });
   }
+
   animateOutcomeStats();
 
 })();

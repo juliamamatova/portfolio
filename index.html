@@ -700,6 +700,13 @@
     line-height: 1;
     z-index: 2;
     pointer-events: none;
+    transform: translateY(0) scale(1);
+    transform-origin: center bottom;
+    transition: transform .45s cubic-bezier(.2,.8,.25,1);
+  }
+
+  .card:hover .lock-emoji {
+    transform: translateY(-7px) scale(1.05);
   }
 
 </style>

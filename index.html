@@ -687,6 +687,21 @@
     font-size: clamp(38px, 5vw, 58px);
   }
 
+  .lock-emoji {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5%;
+    height: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(64px, 8vw, 92px);
+    line-height: 1;
+    z-index: 2;
+    pointer-events: none;
+  }
+
 </style>
 </head>
 <body>
@@ -793,15 +808,13 @@
     <!-- ===== PROJECT 5 ===== -->
     <a class="card" href="https://wa.me/5491133762592" target="_blank" rel="noopener">
       <div class="folder">
-        <div class="peek peek--left other-projects-preview"><i>🦠</i></div>
-        <div class="peek peek--mid other-projects-preview"><i>✈️</i></div>
-        <div class="peek peek--right other-projects-preview"><i>🥦</i></div>
         <div class="back"></div>
+        <div class="lock-emoji">🔒</div>
         <div class="front">
-          <div class="stickers stickers--whatsapp"><span class="metric-label">WhatsApp</span></div>
+          <div class="stickers stickers--whatsapp"><span class="metric-label">Under NDA</span></div>
         </div>
       </div>
-      <div class="caption"><h2>Other projects</h2><span class="meta-line">More projects available on request — some under NDA.</span></div>
+      <div class="caption"><h2>Other projects</h2><span class="meta-line">More projects available on request</span></div>
     </a>
 
   </div>

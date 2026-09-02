@@ -738,10 +738,26 @@ body{
 }
 @media (max-width:640px){
   .fullbleed-pair{
-    grid-template-columns:1fr;
+    display:flex;
+    height:400px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .fullbleed-pair::-webkit-scrollbar{
+    display:none;
   }
   .fullbleed-pair img{
-    aspect-ratio:16/10;
+    flex:0 0 90vw;
+    width:90vw;
+    height:400px;
+    aspect-ratio:auto;
+    object-fit:cover;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
   }
 }
 
